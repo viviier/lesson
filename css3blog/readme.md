@@ -10,3 +10,5 @@
 4. 感觉还可以继续实现的是presentation的css3鼠标移入然后显示文字效果
 
 <em>所以引入bootstrap主要还是为了自适应，还是要多熟悉一下bootstrap确实是可以提升开发时间，这种页面应该30分钟左右就可以搞定吧</em>
+
+[demo](http://htmlpreview.github.io/?https://github.com/viviier/lesson/blob/master/css3blog/index.html)

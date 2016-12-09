@@ -12,12 +12,12 @@
     <!-- plugins -->
     <button class="btn back-top-btn" id="backTopBtn">返回顶部</button>
 
-    <div class="shade" id="shade"></div>
+
 
     <!-- header -->
 <header>
     <nav class="navbar navbar-inverse navbar-fixed-top" id="navbar-inverse">
-        <div class="container-fluid">
+
             <div class="navbar-header">
                 <button type='button' class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navCollapse">
                     <span class="sr-only">Toggle Navigation</span>
@@ -34,7 +34,7 @@
                     <li><a href="">关于</a></li>
                 </ul>
             </div>
-        </div>
+
     </nav>
 
     <div class="header-content text-center">
@@ -43,7 +43,8 @@
         <button class="btn btn-primary header-button">养我</button>
     </div>
 
-    <span class="header-bottom-icon glyphicon glyphicon-chevron-down" id="bottom-icon"></span>
+    <span class="header-bottom-icon glyphicon glyphicon-chevron-down"></span>
+    <div class="shade" id="shade"></div>
 </header>
 
     <!-- introduction -->
@@ -171,18 +172,17 @@
           }
        });
 
+        $('#shade').click(function() {
+            $('html, body').animate({
+                scrollTop: 648
+            },800);
+        });
+
         $('#backTopBtn').click(function() {
             $('html, body').animate({
                 scrollTop : 0
             },800)
         });
-       var autoButtonIcon =  $('#bottom-icon').animate({
-            opacity: 0,
-
-        },800).animate({
-            opacity:1
-        },800);
-       setInterval(autoButtonIcon,2000)
     });
 </script>
 </body>
