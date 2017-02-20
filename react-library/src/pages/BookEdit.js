@@ -1,39 +1,33 @@
-import React from 'react'
-import HomeLayout from '../layouts/HomeLayout'
-import BookEditor from '../components/BookEditor'
-import fetch from 'isomorphic-fetch'
+import React from 'react';
+import BookEditor from '../components/BookEditor';
+import request, {get} from '../utils/request'
 
-export default class BookEdit extends React.Component {
-	constructor(props, context) {
-		super(props, context)
-		this.state = {
-			book: null
-		}
-	}
+class BookEdit extends React.Component {
+  constructor (props) {
+    super(props);
+    this.state = {
+      book: null
+    };
+  }
 
-	componentWillMount(){
-		const bookId = this.context.router.params.id
-		fetch('http://localhost:3000/book/' + bookId)
-			.then(res => res.json())
-			.then(res => {
-				this.setState({
-					book: res
-				})
-			})
-	}
+  componentWillMount () {
+    const bookId = this.context.router.params.id;
+    get('http://localhost:3000/book/' + bookId)
+      .then(res => {
+        this.setState({
+          book: res
+        });
+      });
+  }
 
-	render() {
-		const {book} = this.state
-		return(
-				<HomeLayout title='编辑图书'>
-					{
-						book ? <BookEdit editTarget={book} /> : '加载中...'
-					}
-				</HomeLayout>
-			)
-	}
+  render () {
+    const {book} = this.state
+    return book ? <BookEditor editTarget={book}/> : <span>'加载中...'</span>
+  }
 }
 
 BookEdit.contextTypes = {
   router: React.PropTypes.object.isRequired
 };
+
+export default BookEdit;

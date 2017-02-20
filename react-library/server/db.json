@@ -19,12 +19,6 @@
       "id": 10003
     },
     {
-      "name": "韩梅梅",
-      "age": "14",
-      "gender": "famale",
-      "id": 10004
-    },
-    {
       "name": "asdf",
       "age": "5",
       "gender": "male",
@@ -38,7 +32,7 @@
     },
     {
       "name": "赵五",
-      "age": "15",
+      "age": 17,
       "gender": "male",
       "id": 10007
     },
@@ -99,16 +93,16 @@
   ],
   "book": [
     {
-      "id": 10000,
       "name": "JavaScript从入门到精通",
-      "price": 9990,
-      "owner_id": 10000
+      "price": 16000,
+      "owner_id": 10000,
+      "id": 10000
     },
     {
-      "id": 10001,
       "name": "Java从入门到放弃",
       "price": 1990,
-      "owner_id": 10001
+      "owner_id": "10002",
+      "id": 10001
     }
   ]
 }
