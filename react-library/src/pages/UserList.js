@@ -1,5 +1,6 @@
 import React from 'react';
-import request, {get} from '../utils/request'
+import {get, del} from '../utils/request'
+import {message, Table, Button, Popconfirm} from 'antd'
 
 class UserList extends React.Component {
   constructor (props) {
@@ -23,58 +24,50 @@ class UserList extends React.Component {
   }
 
   handleDel (user) {
-    const confirmed = confirm(`确定要删除用户 ${user.name} 吗？`);
-    let method = 'delete'
-    if (confirmed) {
-      request(method, 'http://localhost:3000/user/' + user.id)
-        .then(res => {
-          this.setState({
-            userList: this.state.bookList.filter(item => item.id !== user.id)
-          });
-          alert('删除用户成功');
-        })
-        .catch(err => {
-          console.error(err);
-          alert('删除用户失败');
+   del('http://localhost:3000/user/' + user.id)
+      .then(res => {
+        this.setState({
+          userList: this.state.bookList.filter(item => item.id !== user.id)
         });
-    }
+        message.success('删除用户成功');
+      })
+      .catch(err => {
+        console.error(err);
+        message.error('删除用户失败');
+      });
   }
 
   render () {
     const {userList} = this.state;
+    const columns = [
+    {
+      title: '用户ID',
+      dataIndex: 'id'
+    },{
+      title: '用户名',
+      dataIndex: 'name'
+    }, {
+      title: '性别',
+      dataIndex: 'gender'
+    }, {
+      title: '年龄',
+      dataIndex: 'age'
+    }, {
+      title: '操作',
+      render: (text, record) => {
+        return (
+            <Button.Group type="ghost">
+              <Button size="small" onClick={() => this.handleEdit(record)}>编辑</Button>
+              <Popconfirm title="确定要删除吗？" onConfirm={() => this.handleDel(record)}>
+                <Button size="small">编辑</Button>
+              </Popconfirm>
+            </Button.Group>
+          );
+      }
+    }]
 
     return (
-        <table>
-          <thead>
-          <tr>
-            <th>用户ID</th>
-            <th>用户名</th>
-            <th>性别</th>
-            <th>年龄</th>
-            <th>操作</th>
-          </tr>
-          </thead>
-
-          <tbody>
-          {
-            userList.map((user) => {
-              return (
-                <tr key={user.id}>
-                  <td>{user.id}</td>
-                  <td>{user.name}</td>
-                  <td>{user.gender}</td>
-                  <td>{user.age}</td>
-                  <td>
-                    <a href="javascript:void(0)" onClick={() => this.handleEdit(user)}>编辑</a>
-                    &nbsp;
-                    <a href="javascript:void(0)" onClick={() => this.handleDel(user)}>删除</a>
-                  </td>
-                </tr>
-              );
-            })
-          }
-          </tbody>
-        </table>
+    <Table columns={columns} dataSource={userList} rowKey={row => row.id}/>
     );
   }
 }

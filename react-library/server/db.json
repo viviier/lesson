@@ -94,15 +94,15 @@
   "book": [
     {
       "name": "JavaScript从入门到精通",
-      "price": 16000,
+      "price": 1900,
       "owner_id": 10000,
       "id": 10000
     },
     {
-      "name": "Java从入门到放弃",
-      "price": 1990,
-      "owner_id": "10002",
-      "id": 10001
+      "name": "ja",
+      "price": 100,
+      "owner_id": "10000",
+      "id": 10002
     }
   ]
 }
