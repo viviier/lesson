@@ -14,13 +14,16 @@ export default class Tips extends Component {
     }
     componentWillMount(){
         if(tipsState) {
-            this.handleClick()
+             this.setState({
+                show: false
+            })
         }
     }
     handleClick = ()=>{
         this.setState({
             show: false
         })
+        message.success('设置成功')
         setLocal('tips', 'none')
     }
     render(){
