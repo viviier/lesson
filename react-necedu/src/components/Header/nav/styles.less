@@ -5,4 +5,67 @@
 .content {
     width: 95%;
     margin: 0 auto;
+
+    a+a{
+    margin-left: 20px;
+}
+    span {
+        vertical-align: middle;
+    }
+}
+.img {
+    display: inline-block;
+    vertical-align: middle;
+}
+.button {
+    margin: 0 20px;
+    vertical-align: middle;
+    color: #fff;
+    background-color: rgba(0, 177, 85, 1);
+    &.check{
+        background-color: #fff;
+        color: #000;
+        cursor: default;
+        &:hover {
+            color: #000;
+            background-color: #fff;
+        }
+        a{
+            cursor: pointer;
+            color: rgba(0, 177, 85, 1);
+            &:hover {
+                color: rgba(0, 177, 85, 1);
+                background-color: #fff;
+            }
+        }
+    }
+    &:hover {
+        background-color: rgba(0, 177, 85, 1);
+        color: #fff;
+    }
+}
+.span {
+    vertical-align: middle;
+}
+.a {
+    vertical-align: middle;
+    font-size: 1.6rem;
+    color: rgba(0, 0, 0, 0.65);
+
+    &:hover {
+        color: rgba(98, 171, 137, 1);
+    }
+}
+.search {
+    font-size: 2rem;
+    vertical-align: middle;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.login-form {
+  max-width: 300px;
+}
+.form-button {
+  width: 100%;
 }

@@ -33,8 +33,8 @@ export default class Tips extends Component {
             return(
                 <Row className={styles.wrap}>
                     <Row className={styles.content}>
-                        <Col span={20}>{msg} <a href='#'>立即查看 <Icon type='right' /></a></Col>
-                        <Col span={4} onClick={this.handleClick}><span><Icon type='close' />不再提醒</span></Col>
+                        <Col span={20}>{msg} <a href='#' className={styles.a}>立即查看 <Icon type='right' /></a></Col>
+                        <Col span={4} onClick={this.handleClick}><span className={styles.span}><Icon type='close' />不再提醒</span></Col>
                     </Row>
                 </Row>
             )
