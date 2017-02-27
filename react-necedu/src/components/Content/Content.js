@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import About from './about/About'
 import ViewImg from './viewImg/ViewImg'
+import Main from './main/Main'
 
 // about
 import openclass from '../../assets/images/open-class.png'
@@ -9,6 +10,9 @@ import mooc from '../../assets/images/university-mooc.png'
 
 // viewimg
 import viewimg from '../../assets/images/aboutImg.jpg'
+
+// main - video
+import videologo from '../../assets/images/calss-info.jpg'
 
 let data = {
     about: {
@@ -32,6 +36,20 @@ let data = {
     },
     view: {
         img: viewimg
+    },
+    main: {
+        sidebarCards: {
+            video: {
+                title: '机构介绍',
+                text: '观看下面的视频来了解吧：',
+                logo: videologo,
+                src: 'http://mov.bn.netease.com/open-movie/nos/mp4/2014/12/30/SADQ86F5S_shd.mp4'
+            },
+            randomList: {
+                title: '最热排行',
+                url: 'http://study.163.com/webDev/hotcouresByCategory.htm'
+            }
+        }
     }
 }
 
@@ -41,6 +59,7 @@ export default class Content extends Component {
             <div>
                 <About data={data.about} />
                 <ViewImg data={data.view} />
+                <Main data={data.main} />
             </div>
         )
     }
