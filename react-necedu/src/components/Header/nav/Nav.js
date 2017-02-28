@@ -149,9 +149,9 @@ export default class Nav extends Component {
                     </Col>
                     <Col span={8}>
                         {
-                            list.map(item => {
+                            list.map((item, index) => {
                                 return(
-                                    <a className={styles.a} key={item}>{item}</a>
+                                    <a href={item.src} className={styles.a} key={index} target={'_blank'}>{item.name}</a>
                                 )
                             })
                         }

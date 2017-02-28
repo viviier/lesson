@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {render} from 'react-dom'
+import {Router, Route, browserHistory} from 'react-router'
 import Header from './components/Header/Header'
 import Content from './components/Content/Content'
 import Footer from './components/Footer/Footer'
@@ -14,6 +15,11 @@ const App = () => (
 		</div>
 )
 
+const Root = () => {
+	<Router history={browserHistory}>
+		<Route path='/' component={App} />
+	</Router>
+}
 
 render(
 <App />,

@@ -19,7 +19,18 @@ const data = {
     },
     nav: {
         logo,
-        list: ['网易云课堂', '云课堂', '中国大学MOOC']
+        list: [{
+            name: '网易公开课',
+            src: 'https://open.163.com/'
+        },
+         {
+            name: '云课堂',
+            src: 'http://study.163.com/'
+        },
+        {
+            name: '中国大学MOOC',
+            src: 'http://www.icourse163.org/'
+        }]
     },
     slider: {
         list: [banner1, banner2, banner3]

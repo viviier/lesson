@@ -20,17 +20,20 @@ let data = {
             {
                 logo: openclass,
                 title: '网易公开课',
-                text: '推出国内外名校公开课，涉及广泛的学科，名校老师认真讲解深度剖析，网易视频公开课频道搭建起强有力的网络视频教学平台。'
+                text: '推出国内外名校公开课，涉及广泛的学科，名校老师认真讲解深度剖析，网易视频公开课频道搭建起强有力的网络视频教学平台。',
+                src: 'https://open.163.com/',
             },
             {
                 logo: classroom,
                 title: '云课堂',
-                text: '网易旗下大型在线学习平台，该平台面向学习者提供海量免费、优质课程,创新的个性化学习体验，自由开放的交流互动环境。'
+                text: '网易旗下大型在线学习平台，该平台面向学习者提供海量免费、优质课程,创新的个性化学习体验，自由开放的交流互动环境。',
+                src: 'http://study.163.com/'
             },
             {
                 logo: mooc,
                 title: '中国大学MOOC',
-                text: '是爱课程网携手云课堂打造的在线学习平台，每一个有提升愿望的人,都可以在这里学习中国最好的大学课程，学完还能获得认证证书。'
+                text: '是爱课程网携手云课堂打造的在线学习平台，每一个有提升愿望的人,都可以在这里学习中国最好的大学课程，学完还能获得认证证书。',
+                src: 'http://www.icourse163.org/',
             }
         ]
     },
@@ -49,6 +52,16 @@ let data = {
                 title: '最热排行',
                 url: 'http://study.163.com/webDev/hotcouresByCategory.htm'
             }
+        },
+        interactiveCaards: {
+            tabs: [{
+                name: '产品设计',
+                type: 10
+            }, {
+                name: '编程语言',
+                type: 20
+            }],
+            url: 'http://study.163.com/webDev/couresByCategory.htm'
         }
     }
 }

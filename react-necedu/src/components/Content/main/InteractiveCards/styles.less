@@ -1,0 +1,41 @@
+.card {
+    display: inline-block;
+    box-sizing: border-box;
+}
+.cardImg {
+        width: 100%;
+    }
+.cardName {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+}
+.cardProvider {
+     &:extend(.cardName);
+     margin: 10px 0;
+}
+.cardPrice {
+    margin-top: 10px;
+    color: rgba(182, 100, 97, 1);
+}
+.radioGroup {
+    margin-bottom: 30px;
+}
+.radio {
+    font-size: 2rem;
+    &:hover {
+        color: rgba(0,0,0, .65);
+    }
+}
+.checked {
+    background-color: rgba(0, 161, 43, 1);
+    color: #fff;
+    &:hover {
+        color: #fff;
+    }
+}
+.colPagination{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+}

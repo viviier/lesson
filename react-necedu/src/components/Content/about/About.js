@@ -16,7 +16,7 @@ export default class About extends Component {
                     {list.map((item, index) => {
                         return (
                            <Col span={span} key={index}>
-                                <Card extra={<a>了解更多<Icon type='right'/></a>} bodyStyle={{ display: 'flex' }} bordered={false}>
+                                <Card extra={<a href={item.src} target={'_blank'}>了解更多<Icon type='right'/></a>} bodyStyle={{ display: 'flex' }} bordered={false}>
                                     <div className={styles.img}>
                                         <img src={item.logo}/>
                                     </div>

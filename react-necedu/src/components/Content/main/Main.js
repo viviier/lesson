@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Row, Col} from 'antd'
 import styles from './styles.less'
-// import InteractiveCards from './InteractiveCards/InteractiveCards'
+import InteractiveCards from './InteractiveCards/InteractiveCards'
 import SidebarCards from './sidebarCards/SidebarCards'
 
 export default class Main extends Component {
@@ -10,11 +10,14 @@ export default class Main extends Component {
     }
 
     render(){
-        let {data: {sidebarCards}}= this.props
+        let {data: {interactiveCaards,sidebarCards}}= this.props
         return (
             <Row className={styles.wrap}>
                 <Row className={styles.content}>
-                    <Col span={9}>
+                    <Col span={18} className={styles.interactiveCards}>
+                        <InteractiveCards {...interactiveCaards}/>
+                    </Col>
+                    <Col span={6} className={styles.sidebarCards}>
                      <SidebarCards {...sidebarCards}/>
                      </Col>
                 </Row>
