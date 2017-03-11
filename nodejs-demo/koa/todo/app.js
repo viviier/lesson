@@ -1,24 +1,19 @@
 const Koa = require('koa')
-const router = require('koa-router')
+const router = require('koa-router')()
 const json = require('koa-json')
 const logger = require('koa-logger')
 const bodyParser = require('koa-bodyparser')
+const auth = require('./server/routes/auth')
+const cors = require('kcors')
 
 const app = new Koa()
 app.use(bodyParser())
 app.use(json())
 app.use(logger())
+app.use(cors())
 
-app.use(async (ctx, next) => {
-    let start = new Date
-    next()
-    let ms = new Date - start
-    console.log(ctx.method, ctx.url, ms)
-})
-
-app.use(async (ctx) => {
-    ctx.body = 'hello'
-})
+router.use('/auth',auth.routes())
+app.use(router.routes())
 
 app.listen(3000, () => {
     console.log('koa in port 3000')
