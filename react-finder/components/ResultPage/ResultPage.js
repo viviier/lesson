@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import GithubBox from '../../components/GithubBox'
+import GithubBox from '../GithubBox/GithubBox'
 
 export default class ResultPage extends Component {
     constructor(props) {

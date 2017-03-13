@@ -1,7 +1,5 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router'
-import RaisedButton from 'material-ul/RaisedButton'
-import TextField from 'material-ul/TextField'
 import IconButton from 'material-ui/IconButton'
 import FontIcon from 'material-ui/FontIcon'
 
@@ -13,15 +11,14 @@ export default class HomePage extends Component {
         let {userId, onSubmitUserId, onChangeUserId} = this.props
         return(
             <div>
-                <TextField
-                    hintText='输入github id'
-                    onchange={onChangeUserId}
+                <input type='text'
+                    onChange={onChangeUserId}
                     />
                     <Link to={{
                         pathname: '/result',
                         query: {userId: userId}
                     }}>
-                        <RaisedButton label='submit' onClick={onSubmitUserId(userId)} primary />
+                        <input type='submit' onClick={onSubmitUserId(userId)} value='click' />
                         </Link>
             </div>
         )

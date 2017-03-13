@@ -2,15 +2,14 @@ import React from 'react'
 import {render} from 'react-dom'
 import {Provider} from 'react-redux'
 import {browserHistory, Router, Route, IndexRoute} from 'react-router'
-import inijectTapEventPlugin from 'react-tab-event-plugin'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import Main from './components/Main'
-import HomePageContainer from './containers/HomePageContainer'
-import ResultPageContainer from './containers/ResultPageContainer'
-import store from './store'
+import Main from '../components/Main/Main'
+import HomePageContainer from '../containers/HomePage/HomePage'
+import ResultPageContainer from '../containers/ResultPage/ResultPage'
+import store from '../store/configuerStore'
+import injectTapEventPlugin from 'react-tap-event-plugin'
 
-// 引入 react-tap-event-plugin 避免 material-ui onTouchTap event 会遇到的问题
-inijectTapEventPlugin()
+injectTapEventPlugin()
 
 render(
     <Provider store={store}>

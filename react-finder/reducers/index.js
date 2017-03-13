@@ -6,4 +6,4 @@ const rootReducer = combineReducers({
     ui,github
 })
 
-export default rootRuducer
+export default rootReducer

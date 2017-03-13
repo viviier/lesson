@@ -8,7 +8,7 @@ import {
     CHAGE_USER_ID
 } from '../../constants/actionTypes.js'
 
-const githubReducers = hanleActions({
+const githubReducers = handleActions({
     GET_GITHUB_SUCCESS: (state, {payload}) => (
         state.merge({
             data: payload.data

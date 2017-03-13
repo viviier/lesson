@@ -1,22 +1,30 @@
-import React, {Component} from 'react'
-import {Link} from 'react-router'
-import { Card, CardActions, CardHeader, CardMedia, CardTitle, CardText } from 'material-ui/Card'
-import RaisedButton from 'material-ui/RaisedButton'
+import React, {Component} from 'react';
+import { Link } from 'react-router';
+// 引入 material-ui 的卡片式元件
+import { Card, CardActions, CardHeader, CardMedia, CardTitle, CardText } from 'material-ui/Card';
+// 引入 material-ui 的 RaisedButton
+import RaisedButton from 'material-ui/RaisedButton';
+// 引入 ActionHome icon
 import ActionHome from 'material-ui/svg-icons/action/home'
 
-const GithubBox = (props) => (
-  <div>
+export default class GithubBox extends Component {
+  constructor(props) {
+    super(props)
+  }
+  render(){
+    return(
+      <div>
     <Card>
       <CardHeader
-        title={props.data.get('name')}
-        subtitle={props.userId}
-        avatar={props.data.get('avatar_url')}
+        title={this.props.data.name}
+        subtitle={this.props.userId}
+        avatar={this.props.data.avatar_url}
       />
       <CardText>
-        Followers : {props.data.get('followers')}
+        Followers : {this.props.data.followers}
       </CardText>      
       <CardText>
-        Following : {props.data.get('following')}
+        Following : {this.props.data.following}
       </CardText>
       <CardActions>
         <Link to="/">
@@ -29,6 +37,6 @@ const GithubBox = (props) => (
       </CardActions>
     </Card> 
   </div>
-);
-
-export default GithubBox;
+    )
+  }
+}

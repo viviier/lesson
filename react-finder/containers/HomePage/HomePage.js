@@ -12,7 +12,7 @@ export default connect(
     }),
     (dispatch) => ({
         onChangeUserId: (event) => (
-            dispatch(onChangeUserId(event.target.value))
+            dispatch(changeUserId(event.target.value))
         ),
         onSubmitUserId: (userId) => () => {
             dispatch(getGithub(userId))
