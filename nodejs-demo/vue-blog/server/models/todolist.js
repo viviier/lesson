@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const db = require('../config/db')
 const listSchema = require('../schema/list')
+const uuid = require('uuid')
 
 const listModel = mongoose.model('List', listSchema)
 
@@ -15,24 +16,36 @@ const getTodolistById = async (id) => {
 
 const createTodolist = async (data) => {
     let list = await new listModel({
+        id,
         userid: data.id,
         content: data.content,
         status: data.status
-    }, (err) => {
-        if(err) {
-            return err
-        } else {
-        list.save((err) => {
-        if(err) console.log(err)
-
-        console.log('save success')
     })
-        }
+    await list.save((err) => console.log(err))
+    return true
+}
+
+const removeTodolist = async (id, userid) => {
+    let list = await listModel.remove({
+        id,
+        userid
+    })
+    return true
+}
+
+const updateTodolist = async (id, userid, status) => {
+    let list = await update({
+        id,
+        userid
+    }, {
+        status
     })
     return true
 }
 
 module.exports = {
     getTodolistById,
-    createTodolist
+    createTodolist,
+    removeTodolist,
+    updateTodolist
 }

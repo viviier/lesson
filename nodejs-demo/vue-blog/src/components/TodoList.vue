@@ -15,7 +15,7 @@
                                         {{index + 1}}. {{item.content}}
                                     </span>
                                     <span class="pull-right">
-                                        <el-button size='small' type='primary' @click='finished(index)'>完成</el-button>
+                                        <el-button size='small' type='primary' @click='update(index)'>完成</el-button>
                                         <el-button size='small' :plain='true' type='danger' @click='remove(index)'>删除</el-button>
                                     </span>
                                 </div>
@@ -34,7 +34,7 @@
                                     {{index + 1}}. {{item.content}}
                                 </span>
                                 <span class="pull-right">
-                                    <el-button size='small' type='primary' @click='restore(index)'>还原</el-button>
+                                    <el-button size='small' type='primary' @click='update(index)'>还原</el-button>
                                 </span>
                             </div>
                         </template>
@@ -155,7 +155,40 @@
                         this.$message.error('获取列表失败')
                         console.log(err)
                     })
-            }
+            },
+            update(index) {
+                this.$http.put('/api/todolist/' + this.id + '/' + this.list[index].id + '/' + this.list[index].status)
+                    .then((res) => {
+                        if(res.status == 200) {
+                            this.$message({
+                                type: 'success',
+                                message: '更新成功'
+                            })
+                            this.getTodolist()
+                        } else {
+                            this.$message.error('更新失败')
+                        }
+                    }, (err) => {
+                        this.$message.error('更新失败')
+                    })
+            },
+            remove(index) {
+      this.$http.delete('/api/todolist/'+ this.id + '/' + this.list[index].id)
+        .then((res) => {
+          if(res.status == 200){
+            this.$message({
+              type: 'success',
+              message: '任务删除成功！'
+            })
+            this.getTodolist();
+          }else{
+            this.$message.error('任务删除失败！')
+          }
+        }, (err) => {
+          this.$message.error('任务删除失败！')
+          console.log(err)
+        })
+    }
         }
     }
 </script>

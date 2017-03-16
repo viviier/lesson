@@ -2,6 +2,10 @@ const mongoose = require('mongoose')
 const schema = mongoose.Schema
 
 ListSchema = new schema({
+    id: {
+        type: String,
+        required: true
+    },
     userid: {
         type: Number,
         required: true

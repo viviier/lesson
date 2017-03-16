@@ -13,7 +13,7 @@ app.use(json())
 app.use(logger())
 
 router.use('/auth',auth.routes())
-router.use('api', jwt({secret: 'vue-koa-demo'}), api.routes())
+router.use('/api', jwt({secret: 'vue-koa-demo'}), api.routes())
 app.use(router.routes())
 
 app.listen(3000, () => {

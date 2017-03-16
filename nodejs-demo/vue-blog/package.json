@@ -4,6 +4,7 @@
   "description": "A Vue.js project",
   "private": true,
   "scripts": {
+    "mongo": "mongod --port 9635 --dbpath='./data'",
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
     "e2e": "node test/e2e/runner.js",
@@ -75,6 +76,7 @@
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
     "url-loader": "^0.5.7",
+    "uuid": "^3.0.1",
     "vue-loader": "^11.1.4",
     "vue-style-loader": "^2.0.0",
     "vue-template-compiler": "^2.2.4",
