@@ -42,7 +42,7 @@ class Home extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="home">
                 {this.getListDom(this.state.list)}
                 <button onClick={() => this.updatedState()}>添加</button>
             </div>

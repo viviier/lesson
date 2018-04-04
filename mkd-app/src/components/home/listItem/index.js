@@ -5,7 +5,7 @@
 
 import React from 'react';
 
-import styles from './style.less';
+import './style.less';
 
 export default class ListItem extends React.Component {
     render() {
@@ -13,7 +13,7 @@ export default class ListItem extends React.Component {
         const {title} = data;
         
         return (
-            <div 
+            <div
                 className='list-item'
                 {...other}
             >
