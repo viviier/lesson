@@ -19,6 +19,6 @@ export default class ListItem extends React.Component {
             >
                 <p>{title}</p>
             </div>
-        )
+        );
     };
 }

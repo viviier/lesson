@@ -5,6 +5,7 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
+import './style.less';
 
 // component
 import ItemList from './listItem';
@@ -44,7 +45,11 @@ class Home extends React.Component {
         return (
             <div className="home">
                 {this.getListDom(this.state.list)}
-                <button onClick={() => this.updatedState()}>添加</button>
+               <div className="list-item">
+                    <i 
+                        className="icon-add"
+                        onClick={() => this.updatedState()} />
+               </div>
             </div>
         );
     }
