@@ -19,14 +19,10 @@ class Editor extends React.Component {
     componentDidMount() {
         let {title, value} = this.props.data;
 
-        if (title && value){
-            this.setState({
-                title,
-                value
-            });
-        } else {
-            console.log('?')
-        }
+        this.setState({
+            title,
+            value
+        });
     }
 
     handleChange(e) {    
@@ -85,9 +81,15 @@ class Editor extends React.Component {
                     <button className="save" onClick={() => this.handleSaveClick()} >保存</button>
                 </div>
                 <div className="input-wrap">
-                    <input className="title-box" onChange={e => this.handleChange(e)} value={this.state.title || ''} />
+                    <input 
+                        placeholder="请输入你的标题"
+                        className="title-box" 
+                        onChange={e => this.handleChange(e)} 
+                        value={this.state.title || ''} 
+                    />
                     <div className="marked-wrap">
                         <textarea 
+                            placeholder="写点什么..."
                             className="input-box"
                             // 去掉单词拼写检测
                             spellCheck='false'
