@@ -16,6 +16,19 @@ function mkds(state = [], action) {
                     value: ''
                 }
             ];
+        case 'EDITOR_MKD':
+            return state.map((item, index) => {
+                if (index === action.index) {
+                    return {
+                        ...item,
+                        title: action.title,
+                        value: action.value
+                    }
+                }
+                else {
+                    return item;
+                }
+            });
         default: return state;
     }
 }

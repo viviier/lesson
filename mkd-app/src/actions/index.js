@@ -11,3 +11,12 @@ export function addMkd() {
         id: uuid()
     };
 }
+
+export function editorMkd(index, title, value) {
+    return {
+        type: 'EDITOR_MKD',
+        index,
+        title,
+        value
+    }
+}

@@ -14,31 +14,38 @@ import ItemList from './listItem';
 import { addMkd } from '../../actions';
 
 class Home extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            list: []
-        }
+    
+    state = {
+        list: []
     }
 
     componentDidMount() {
-        this.updatedState();
-    }
-
-    updatedState() {
-        this.props.handleAddClick();
         this.setState({
             list: this.props.list
         });
     }
 
+    updatedState() {
+        setTimeout(() => {
+            this.props.handleAddClick();
+            this.setState({
+                list: this.props.list
+            }); 
+        }, 0);
+    }
+
     getListDom(list) {
         let dom = list && list.map((item, key) => {
-            return <ItemList data={item} key={key} />
+            return <ItemList data={item} key={key} onClick={() => this.handleItemClick(key)}/>
         });
 
         return dom;
+    }
+
+    handleItemClick(index) {
+        // 获取index，title，value
+        let {title, value} = this.state.list[index];
+        this.props.toEditor(index, title, value);
     }
 
     render() {
