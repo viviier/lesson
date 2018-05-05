@@ -1,6 +1,6 @@
 node_modules/
 *.zip
-package.lock.json
+package-lock.json
 /lib
 *.map
 build/
